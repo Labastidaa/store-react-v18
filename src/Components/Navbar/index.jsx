@@ -12,7 +12,6 @@ const Navbar = () => {
   const context = useContext(ShoppingCartContext)
   const activeStyle = 'flex items-center justify-center bg-[rgb(28,28,28)] text-white rounded-lg h-[100%] w-[100%]'
 
-
   // Sign Out
   const signOut = localStorage.getItem('sign-out')
   const parsedSignOut = JSON.parse(signOut)
@@ -112,37 +111,39 @@ const Navbar = () => {
             All
           </NavLink>
         </li>
+
         <li>
           <NavLink
-            to='/clothes'
-            onClick={() => {
-              context.setSearchByCategory('Clothes'),
-              context.closeall()
-            }}
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>
-            Clothes
+                to='/clothes'
+                onClick={() => { 
+                  context.setSearchByCategory('Clothes'),
+                  context.toggleMenu() 
+                }}
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }>
+                Clothes
           </NavLink>
         </li>
+
         <li>
           <NavLink
-            to='/electronics'
-            onClick={() => {
-              context.setSearchByCategory('electronics'),
-              context.closeall()
-            }}
-            className={({ isActive }) =>
-              isActive ? activeStyle : undefined
-            }>
-            Electronics
-          </NavLink>
+                to='/electronics'
+                onClick={() => { 
+                  context.setSearchByCategory('Electronics'),
+                  context.toggleMenu()
+                }}
+                className={({ isActive }) =>
+                  isActive ? activeStyle : undefined
+                }>
+                Electronics
+            </NavLink>
         </li>
         <li>
           <NavLink
             to='/Furnitures'
             onClick={() => {
-              context.setSearchByCategory('Furniture'),
+              context.setSearchByCategory('furniture'),
               context.closeAll
             }}
             className={({ isActive }) =>
@@ -222,7 +223,7 @@ const Navbar = () => {
               <NavLink
                 to='/clothes'
                 onClick={() => { 
-                  context.setSearchByCategory('clothes'),
+                  context.setSearchByCategory('Clothes'),
                   context.toggleMenu() 
                 }}
                 className={({ isActive }) =>
@@ -238,7 +239,7 @@ const Navbar = () => {
               <NavLink
                 to='/electronics'
                 onClick={() => { 
-                  context.setSearchByCategory('electronics'),
+                  context.setSearchByCategory('Electronics'),
                   context.toggleMenu()
                 }}
                 className={({ isActive }) =>

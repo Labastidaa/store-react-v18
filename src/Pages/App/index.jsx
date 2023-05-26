@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { useRoutes, BrowserRouter, Navigate } from 'react-router-dom'
+import { useRoutes, HashRouter, Navigate } from 'react-router-dom'
 import { ShoppingCartProvider, ShoppingCartContext } from '../../Context'
 import { initializeLocalStorage } from '../../utils/localStorageUtils';
 import Home from '../Home'
@@ -52,12 +52,12 @@ const App = () => {
 
   return (
     <ShoppingCartProvider>
-      <BrowserRouter>
+      <HashRouter>
         <AppRoutes />
         <Navbar/>
         <CheckoutSideMenu />
         <UserMenu/>
-      </BrowserRouter>
+      </HashRouter>
     </ShoppingCartProvider>
   )
 }
